@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LockNeon — Lock any app, glow in control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/babel" src="./ios-frame.jsx"></script>
+  <style>
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    body { margin: 0; background: #08080c; }
+    ::selection { background: #ff2ee6; color: #08080c; }
+    a { color: #00f0ff; }
+    a:hover { color: #ff2ee6; }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#08080c"/><rect x="60" y="55" width="80" height="90" rx="14" fill="none" stroke="#00f0ff" stroke-width="4"/><circle cx="100" cy="95" r="10" fill="#ff2ee6"/><rect x="94" y="95" width="12" height="18" rx="3" fill="#ff2ee6"/></svg>
+  </template>
+</helmet>
+
+<div style="background:#08080c; min-height:100vh; font-family:'Inter',sans-serif; color:#f2f2f7; overflow-x:hidden; position:relative;" data-screen-label="LockNeon Landing">
+
+  <!-- ambient glow blobs -->
+  <div style="position:absolute; top:-120px; left:-100px; width:500px; height:500px; background:radial-gradient(circle, rgba(0,240,255,0.25), transparent 70%); filter:blur(40px); pointer-events:none;"></div>
+  <div style="position:absolute; top:200px; right:-160px; width:600px; height:600px; background:radial-gradient(circle, rgba(255,46,230,0.22), transparent 70%); filter:blur(40px); pointer-events:none;"></div>
+
+  <!-- NAV -->
+  <nav style="position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto; padding:28px 32px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="width:34px; height:34px; border-radius:9px; background:linear-gradient(135deg,#00f0ff,#ff2ee6); display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(0,240,255,0.5);">
+        <span style="font-size:18px;">🔒</span>
+      </div>
+      <span style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.02em;">LockNeon</span>
+    </div>
+    <a href="#download" style="text-decoration:none; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:14px; color:#08080c; background:#00f0ff; padding:10px 20px; border-radius:100px; box-shadow:0 0 24px rgba(0,240,255,0.45);">Get the app</a>
+  </nav>
+
+  <!-- HERO -->
+  <section style="position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:40px 32px 60px; display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;">
+    <div>
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:100px; border:1px solid rgba(0,240,255,0.35); background:rgba(0,240,255,0.06); font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:#00f0ff; margin-bottom:24px;">
+        <span style="width:6px; height:6px; border-radius:50%; background:#00f0ff; box-shadow:0 0 8px #00f0ff; animation:glowPulse 2s infinite;"></span>
+        MacBook remote lock
+      </div>
+      <h1 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(40px,5vw,64px); line-height:1.02; font-weight:700; letter-spacing:-0.03em; margin:0 0 22px;">
+        Walk away.<br>
+        <span style="background:linear-gradient(90deg,#00f0ff,#ff2ee6); -webkit-background-clip:text; background-clip:text; color:transparent;">Mac locks itself.</span>
+      </h1>
+      <p style="font-size:18px; line-height:1.6; color:#a9a9bb; max-width:480px; margin:0 0 34px;">
+        LockNeon turns your iPhone into a Bluetooth key for your MacBook. Step out of range and it locks instantly — or slam it shut from anywhere with one neon button.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px;" id="download">
+        <a href="#" style="text-decoration:none; display:flex; align-items:center; gap:10px; padding:14px 24px; border-radius:14px; background:#f2f2f7; color:#08080c; font-weight:600; font-size:15px; box-shadow:0 0 30px rgba(255,255,255,0.15);">
+          <span style="font-size:20px;"></span> Download on App Store
+        </a>
+        <a href="#" style="text-decoration:none; display:flex; align-items:center; gap:10px; padding:14px 24px; border-radius:14px; background:transparent; color:#ff2ee6; font-weight:600; font-size:15px; border:1.5px solid #ff2ee6; box-shadow:0 0 24px rgba(255,46,230,0.25);">
+          <span style="font-size:16px; font-weight:700;">↓</span> Download APK
+        </a>
+      </div>
+      <div style="display:flex; gap:28px; margin-top:36px; color:#7c7c8d; font-size:13px;">
+        <div><strong style="color:#f2f2f7; font-size:20px; font-family:'Space Grotesk',sans-serif;">4.9★</strong><br>App Store rating</div>
+        <div><strong style="color:#f2f2f7; font-size:20px; font-family:'Space Grotesk',sans-serif;">&lt;0.5s</strong><br>lock on walk-away</div>
+        <div><strong style="color:#f2f2f7; font-size:20px; font-family:'Space Grotesk',sans-serif;">256-bit</strong><br>encrypted pairing</div>
+      </div>
+    </div>
+
+    <div style="display:flex; justify-content:center;">
+      <div style="animation:floatSlow 5s ease-in-out infinite; filter:drop-shadow(0 0 50px rgba(0,240,255,0.25)) drop-shadow(0 0 80px rgba(255,46,230,0.15));">
+        <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" title="LockNeon" dark="{{ true }}" hint-size="300px,620px">
+          <div style="height:100%; box-sizing:border-box; overflow:hidden; background:linear-gradient(180deg,#0c0c14,#08080c); padding:14px 17px 16px; display:flex; flex-direction:column; gap:14px;">
+            <div style="text-align:center; padding-top:6px;">
+              <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:#f2f2f7;">My MacBook Pro</div>
+              <div style="display:flex; align-items:center; justify-content:center; gap:6px; font-size:11px; color:#00f0ff; margin-top:4px;">
+                <span style="width:6px; height:6px; border-radius:50%; background:#00f0ff; box-shadow:0 0 8px #00f0ff; animation:glowPulse 2s infinite;"></span>
+                Connected · in range
+              </div>
+            </div>
+            <div style="border-radius:18px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); padding:16px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:26px;">💻</span>
+              <div style="flex:1;">
+                <div style="font-size:12.5px; font-weight:600; color:#f2f2f7;">Status: Unlocked</div>
+                <div style="font-size:10.5px; color:#7c7c8d;">Bluetooth · 2.4 m away</div>
+              </div>
+              <span style="font-size:11px; font-weight:700; color:#39ff8b;">●</span>
+            </div>
+            <div style="display:flex; justify-content:center; align-items:center; flex:1; padding:4px 0;">
+              <div style="width:150px; height:150px; border-radius:50%; background:radial-gradient(circle at 50% 40%, rgba(255,46,230,0.25), rgba(8,8,12,0.9)); border:2px solid #ff2ee6; box-shadow:0 0 40px rgba(255,46,230,0.45), inset 0 0 24px rgba(255,46,230,0.25); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+                <span style="font-size:30px;">🔒</span>
+                <span style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; color:#ff2ee6; letter-spacing:0.08em;">LOCK NOW</span>
+              </div>
+            </div>
+            <div style="border-radius:16px; background:rgba(0,240,255,0.07); border:1px solid rgba(0,240,255,0.25); padding:13px 14px;">
+              <div style="display:flex; justify-content:space-between; font-size:11.5px; font-weight:600; color:#f2f2f7; margin-bottom:8px;">
+                <span>Auto-lock distance</span><span style="color:#00f0ff;">5 m</span>
+              </div>
+              <div style="height:5px; border-radius:3px; background:rgba(255,255,255,0.1); position:relative;">
+                <div style="position:absolute; left:0; top:0; bottom:0; width:55%; border-radius:3px; background:linear-gradient(90deg,#00f0ff,#ff2ee6); box-shadow:0 0 10px rgba(0,240,255,0.6);"></div>
+                <div style="position:absolute; left:55%; top:50%; transform:translate(-50%,-50%); width:14px; height:14px; border-radius:50%; background:#f2f2f7; box-shadow:0 0 10px rgba(0,240,255,0.8);"></div>
+              </div>
+            </div>
+          </div>
+        </x-import>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS GALLERY -->
+  <section style="position:relative; z-index:2; padding:70px 0 90px;">
+    <div style="max-width:1200px; margin:0 auto; padding:0 32px 36px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(28px,3.4vw,38px); font-weight:700; letter-spacing:-0.02em; margin:0 0 10px;">
+        Every screen, <span style="color:#ff2ee6;">built to glow</span>.
+      </h2>
+      <p style="color:#a9a9bb; font-size:16px; max-width:520px; margin:0;">Proximity lock, one-tap control, and intrusion alerts — swipe through the app.</p>
+    </div>
+    <div style="display:flex; gap:24px; overflow-x:auto; padding:10px 32px 24px; scroll-snap-type:x mandatory;">
+      <sc-for list="{{ screens }}" as="scr" hint-placeholder-count="4">
+        <div style="flex:none; width:230px; scroll-snap-align:start;">
+          <div style="border-radius:26px; border:1px solid rgba(255,255,255,0.08); background:linear-gradient(180deg,#0e0e17,#08080c); overflow:hidden; box-shadow:0 0 34px {{ scr.glow }}; aspect-ratio:230/470; display:flex; flex-direction:column;">
+            <div style="padding:16px 16px 0; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:10px; color:#7c7c8d; font-weight:600;">9:41</span>
+              <span style="font-size:10px; color:#7c7c8d;">●●●</span>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:20px;">
+              <div style="font-size:34px;">{{ scr.emoji }}</div>
+              <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:15px; color:#f2f2f7; text-align:center;">{{ scr.title }}</div>
+              <div style="font-size:11.5px; color:#8b8b9c; text-align:center; line-height:1.5;">{{ scr.copy }}</div>
+            </div>
+          </div>
+          <div style="text-align:center; margin-top:12px; font-size:12.5px; font-weight:600; color:#c9c9d8;">{{ scr.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- FOOTER / DOWNLOAD CTA -->
+  <footer style="position:relative; z-index:2; border-top:1px solid rgba(255,255,255,0.08); padding:70px 32px 40px;">
+    <div style="max-width:900px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(30px,4vw,46px); font-weight:700; letter-spacing:-0.02em; margin:0 0 16px;">
+        Your Mac. <span style="background:linear-gradient(90deg,#00f0ff,#ff2ee6); -webkit-background-clip:text; background-clip:text; color:transparent;">Your rules.</span>
+      </h2>
+      <p style="color:#a9a9bb; font-size:16px; margin:0 0 34px;">Free to start. iPhone app + free macOS companion — paired in 30 seconds.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:14px; margin-bottom:56px;">
+        <a href="#" style="text-decoration:none; display:flex; align-items:center; gap:10px; padding:14px 26px; border-radius:14px; background:#f2f2f7; color:#08080c; font-weight:600; font-size:15px; box-shadow:0 0 30px rgba(255,255,255,0.15);">
+          <span style="font-size:20px;"></span> Download on App Store
+        </a>
+        <a href="#" style="text-decoration:none; display:flex; align-items:center; gap:10px; padding:14px 26px; border-radius:14px; background:transparent; color:#00f0ff; font-weight:600; font-size:15px; border:1.5px solid #00f0ff; box-shadow:0 0 24px rgba(0,240,255,0.25);">
+          <span style="font-size:16px; font-weight:700;">↓</span> Download APK (.apk, 24MB)
+        </a>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.06);">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:22px; height:22px; border-radius:6px; background:linear-gradient(135deg,#00f0ff,#ff2ee6);"></div>
+          <span style="font-size:13px; color:#7c7c8d;">© 2026 LockNeon. All rights reserved.</span>
+        </div>
+        <div style="display:flex; gap:22px; font-size:13px;">
+          <a href="#" style="text-decoration:none; color:#7c7c8d;">Privacy</a>
+          <a href="#" style="text-decoration:none; color:#7c7c8d;">Terms</a>
+          <a href="#" style="text-decoration:none; color:#7c7c8d;">Twitter/X</a>
+          <a href="#" style="text-decoration:none; color:#7c7c8d;">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const screens = [
+      { emoji: "📡", title: "Proximity Lock", copy: "Walk out of Bluetooth range and your Mac locks in under half a second.", label: "Auto-Lock", glow: "rgba(0,240,255,0.18)" },
+      { emoji: "🔘", title: "One-Tap Lock", copy: "A big neon button locks your Mac instantly — from the app or a widget.", label: "Remote Button", glow: "rgba(255,46,230,0.18)" },
+      { emoji: "🔓", title: "Walk-Up Unlock", copy: "Come back within range and your Mac wakes and unlocks, hands-free.", label: "Auto-Unlock", glow: "rgba(0,240,255,0.18)" },
+      { emoji: "🚨", title: "Intrusion Alerts", copy: "Wrong password on your Mac? Get an instant alert with a webcam snap.", label: "Security Alerts", glow: "rgba(255,46,230,0.18)" }
+    ];
+
+    return { screens };
+  }
+}
+
+</script>
+</body>
+</html>
