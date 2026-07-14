@@ -86,36 +86,43 @@
     <div style="display:flex; justify-content:center;">
       <div style="animation:floatSlow 5s ease-in-out infinite; filter:drop-shadow(0 0 60px rgba(0,242,255,0.18));">
         <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="300px,620px">
-          <div style="height:100%; box-sizing:border-box; overflow:hidden; background:#000; padding:14px 17px 16px; display:flex; flex-direction:column; gap:14px;">
+          <div style="height:100%; box-sizing:border-box; overflow:hidden; background:#000; padding:66px 18px 20px; display:flex; flex-direction:column;">
             <div style="display:flex; align-items:center; justify-content:space-between;">
-              <span style="font-size:17px; color:#596673;">⚙︎</span>
-              <div style="text-align:center;">
-                <div style="font-weight:700; font-size:15px; color:#f2f2f7;">NeonLock</div>
+              <div style="width:38px; height:38px; border-radius:50%; background:#0C0C0E; display:flex; align-items:center; justify-content:center;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#c9c9d8" stroke-width="1.8"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06A2 2 0 1 1 7.04 4.3l.06.06A1.65 1.65 0 0 0 8.92 4.7 1.65 1.65 0 0 0 9.93 3.2V3a2 2 0 1 1 4 0v.09c0 .68.39 1.29 1 1.51.62.23 1.33.09 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.22.61.83 1 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
               </div>
-              <span style="font-size:15px; color:#596673;">💻</span>
-            </div>
-            <div style="display:flex; justify-content:center;">
-              <div style="display:inline-flex; align-items:center; gap:6px; padding:5px 13px; border-radius:100px; border:1px solid rgba(140,255,51,0.45); background:#0C0C0E; font-size:11px; font-weight:600; color:#8CFF33;">
-                <span style="width:6px; height:6px; border-radius:50%; background:#8CFF33; box-shadow:0 0 8px #8CFF33;"></span>
-                Connected · ≈ 2.3 m away
+              <div style="width:38px; height:38px; border-radius:50%; background:#0C0C0E; display:flex; align-items:center; justify-content:center;">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#c9c9d8" stroke-width="1.8"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M1 20h22"/></svg>
               </div>
             </div>
-            <div style="display:flex; justify-content:center; align-items:center; flex:1;">
-              <div style="width:170px; height:170px; border-radius:50%; background:#0C0C0E; border:2px solid #00F2FF; animation:buttonPulse 1.2s ease-in-out infinite; display:flex; align-items:center; justify-content:center;">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none"><path d="M12 3v8" stroke="#00F2FF" stroke-width="2" stroke-linecap="round"/><path d="M6.6 6.2a8 8 0 1 0 10.8 0" stroke="#00F2FF" stroke-width="2" stroke-linecap="round"/></svg>
+            <div style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#f2f2f7; margin-top:10px;">NeonLock</div>
+            <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+              <div style="{{ btnBoxStyle }}">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none"><path d="M12 3v8" stroke="{{ btnColor }}" stroke-width="2" stroke-linecap="round" style="transition:stroke 0.5s ease;"/><path d="M6.6 6.2a8 8 0 1 0 10.8 0" stroke="{{ btnColor }}" stroke-width="2" stroke-linecap="round" style="transition:stroke 0.5s ease;"/></svg>
               </div>
             </div>
             <div style="text-align:center;">
-              <div style="font-size:13px; font-weight:600; color:#f2f2f7;">Locking Ilya's MacBook Air</div>
-              <div style="font-size:11px; color:#596673; margin-top:3px;">Tap to lock now</div>
-            </div>
-            <div style="border-radius:20px; background:#0C0C0E; border:1px solid rgba(255,255,255,0.08); padding:13px 15px;">
-              <div style="display:flex; justify-content:space-between; font-size:11.5px; font-weight:600; color:#f2f2f7; margin-bottom:9px;">
-                <span>Proximity auto-lock</span><span style="color:#00F2FF;">5 m</span>
+              <div style="font-size:14px; font-weight:500; color:#9a9aa5;">Locking Ilya's MacBook Pro</div>
+              <div style="{{ statusRowStyle }}">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="{{ statusIconStyle }}">
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                  <path d="M15.5 9.5a5 5 0 0 1 0 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M18.2 6.8a9 9 0 0 1 0 10.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+                  <path d="M8.5 9.5a5 5 0 0 0 0 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M5.8 6.8a9 9 0 0 0 0 10.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/>
+                  <sc-if value="{{ disconnected }}" hint-placeholder-val="{{ false }}">
+                    <path d="M2 2l20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </sc-if>
+                </svg>
+                <span style="{{ statusTextStyle }}">{{ statusText }}</span>
               </div>
-              <div style="height:4px; border-radius:2px; background:rgba(255,255,255,0.1); position:relative;">
-                <div style="position:absolute; left:0; top:0; bottom:0; width:55%; border-radius:2px; background:#00F2FF; box-shadow:0 0 8px rgba(0,242,255,0.8);"></div>
-                <div style="position:absolute; left:55%; top:50%; transform:translate(-50%,-50%); width:14px; height:14px; border-radius:50%; background:#f2f2f7; box-shadow:0 0 10px rgba(0,242,255,0.8);"></div>
+              <div style="display:flex; justify-content:center; align-items:center; gap:6px; margin-top:8px; opacity:{{ distanceOpacity }}; transition:opacity 0.4s ease;">
+                <svg width="14" height="10" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#00F2FF" stroke-opacity="0.6" fill="none"/><rect x="2" y="2" width="13" height="9" rx="2" fill="#00F2FF"/><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="#00F2FF" fill-opacity="0.5"/></svg>
+                <span style="font-size:13px; font-weight:600; color:#00F2FF;">&lt; 1 m away</span>
+              </div>
+              <div style="{{ pillStyle }}">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2.5" fill="#8CFF33"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#8CFF33" stroke-width="2"/></svg>
+                <span style="font-size:12.5px; font-weight:600; color:#8CFF33;">Laptop is locked</span>
               </div>
             </div>
           </div>
@@ -135,15 +142,48 @@
     <div style="display:flex; gap:24px; overflow-x:auto; padding:10px 32px 24px; scroll-snap-type:x mandatory;">
       <sc-for list="{{ screens }}" as="scr" hint-placeholder-count="4">
         <div style="flex:none; width:230px; scroll-snap-align:start;">
-          <div style="border-radius:26px; border:1px solid rgba(255,255,255,0.08); background:#0C0C0E; overflow:hidden; box-shadow:0 0 30px {{ scr.glow }}; aspect-ratio:230/470; display:flex; flex-direction:column;">
-            <div style="padding:16px 16px 0; display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:10px; color:#596673; font-weight:600;">9:41</span>
-              <span style="font-size:10px; color:#596673;">●●●</span>
+          <div style="border-radius:26px; border:1px solid rgba(255,255,255,0.08); background:#000; overflow:hidden; box-shadow:0 0 30px {{ scr.glow }}; aspect-ratio:230/470; display:flex; flex-direction:column; padding:16px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <span style="font-size:10px; color:#596673; font-weight:600;">9:21</span>
+              <span style="display:inline-flex; align-items:center; gap:5px; color:#c9c9d8;">
+                <svg width="14" height="10" viewBox="0 0 19 12"><rect x="0" y="7.5" width="3.2" height="4.5" rx="0.7" fill="currentColor"/><rect x="4.8" y="5" width="3.2" height="7" rx="0.7" fill="currentColor"/><rect x="9.6" y="2.5" width="3.2" height="9.5" rx="0.7" fill="currentColor"/><rect x="14.4" y="0" width="3.2" height="12" rx="0.7" fill="currentColor" opacity="0.35"/></svg>
+                <svg width="20" height="10" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="currentColor" stroke-opacity="0.35" fill="none"/><rect x="2" y="2" width="13" height="9" rx="2" fill="currentColor"/><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="currentColor" fill-opacity="0.4"/></svg>
+              </span>
             </div>
-            <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:20px;">
-              <div style="width:64px; height:64px; border-radius:50%; border:2px solid {{ scr.color }}; box-shadow:0 0 8px {{ scr.glowStrong }}, 0 0 26px {{ scr.glow }}; display:flex; align-items:center; justify-content:center; font-size:26px;">{{ scr.emoji }}</div>
-              <div style="font-weight:700; font-size:15px; color:#f2f2f7; text-align:center;">{{ scr.title }}</div>
-              <div style="font-size:11.5px; color:#8b8b9c; text-align:center; line-height:1.5;">{{ scr.copy }}</div>
+            <div style="font-size:19px; font-weight:800; letter-spacing:-0.02em; color:#f2f2f7; margin-bottom:14px;">{{ scr.title }}</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <sc-for list="{{ scr.rows }}" as="row" hint-placeholder-count="2">
+                <div style="border-radius:14px; background:#141416; padding:11px 12px; display:flex; align-items:center; gap:10px;">
+                  <sc-if value="{{ row.hasDot }}" hint-placeholder-val="{{ true }}">
+                    <span style="width:8px; height:8px; border-radius:50%; background:{{ row.dot }}; flex:none; box-shadow:0 0 6px {{ row.dot }};"></span>
+                  </sc-if>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-size:12px; font-weight:600; color:{{ row.color }};">{{ row.label }}</div>
+                    <sc-if value="{{ row.sub }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-size:10px; color:{{ row.subColor }}; margin-top:1px;">{{ row.sub }}</div>
+                    </sc-if>
+                  </div>
+                  <sc-if value="{{ row.hasCheck }}" hint-placeholder-val="{{ false }}">
+                    <svg width="13" height="10" viewBox="0 0 16 12" style="flex:none;"><path d="M1 6l4.5 4.5L15 1" stroke="#00F2FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </sc-if>
+                  <sc-if value="{{ row.hasToggle }}" hint-placeholder-val="{{ false }}">
+                    <div style="width:34px; height:20px; border-radius:100px; flex:none; padding:2px; box-sizing:border-box; background:{{ row.toggleBg }}; box-shadow:{{ row.toggleShadow }}; display:flex; justify-content:{{ row.toggleJustify }};">
+                      <span style="width:16px; height:16px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,0.4);"></span>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ row.hasSlider }}" hint-placeholder-val="{{ false }}">
+                    <div style="flex:1;">
+                      <div style="display:flex; justify-content:space-between; font-size:11.5px; margin-bottom:6px;">
+                        <span style="color:#f2f2f7; font-weight:600;">{{ row.label }}</span><span style="color:#00F2FF; font-weight:600;">{{ row.sliderValue }}</span>
+                      </div>
+                      <div style="height:4px; border-radius:2px; background:#38383A; position:relative;">
+                        <div style="position:absolute; left:0; top:0; bottom:0; width:{{ row.sliderPct }}; border-radius:2px; background:#00F2FF; box-shadow:0 0 8px rgba(0,242,255,0.8);"></div>
+                        <div style="position:absolute; left:{{ row.sliderPct }}; top:50%; transform:translate(-50%,-50%); width:15px; height:15px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.5);"></div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </div>
+              </sc-for>
             </div>
           </div>
           <div style="text-align:center; margin-top:12px; font-size:12.5px; font-weight:600; color:#c9c9d8;">{{ scr.label }}</div>
@@ -186,14 +226,61 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  state = { phase: 0 };
+  componentDidMount() {
+    this._t = setInterval(() => {
+      this.setState(s => ({ phase: (s.phase + 1) % 3 }));
+    }, 2400);
+  }
+  componentWillUnmount() { clearInterval(this._t); }
   renderVals() {
+    const phase = this.state.phase; // 0 disconnected, 1 connected, 2 locked
+    const disconnected = phase === 0;
+    const locked = phase === 2;
+    const btnColor = phase === 2 ? "#8CFF33" : phase === 1 ? "#00F2FF" : "#596673";
+    const btnShadow = phase === 2
+      ? "0 0 10px rgba(140,255,51,1), 0 0 40px rgba(140,255,51,0.7), 0 0 100px rgba(140,255,51,0.4), inset 0 0 26px rgba(140,255,51,0.25)"
+      : phase === 1
+      ? "0 0 6px rgba(0,242,255,0.9), 0 0 24px rgba(0,242,255,0.5), 0 0 70px rgba(0,242,255,0.3), inset 0 0 18px rgba(0,242,255,0.15)"
+      : "none";
+    const btnAnim = phase === 1 ? "buttonPulse 1.2s ease-in-out infinite" : "none";
+    const pillOpacity = locked ? 1 : 0;
+    const pillTransform = locked ? "translateY(0) scale(1)" : "translateY(6px) scale(0.96)";
+    const btnBoxStyle = `width:168px; height:168px; border-radius:50%; background:#0C0C0E; border:2px solid ${btnColor}; box-shadow:${btnShadow}; transition:border-color 0.5s ease, box-shadow 0.5s ease; animation:${btnAnim}; display:flex; align-items:center; justify-content:center;`;
+    const pillStyle = `display:inline-flex; align-items:center; gap:7px; margin-top:16px; padding:8px 18px; border-radius:100px; background:rgba(140,255,51,0.08); border:1px solid rgba(140,255,51,0.5); box-shadow:0 0 16px rgba(140,255,51,0.35); opacity:${pillOpacity}; transform:${pillTransform}; transition:opacity 0.4s ease, transform 0.4s ease;`;
+    const statusColor = disconnected ? "#FF2E38" : "#8CFF33";
+    const statusText = disconnected ? "Disconnected" : "Connected";
+    const statusRowStyle = "display:flex; justify-content:center; align-items:center; gap:6px; margin-top:12px;";
+    const statusIconStyle = `color:${statusColor}; transition:color 0.4s ease;`;
+    const statusTextStyle = `font-size:14px; font-weight:600; color:${statusColor}; transition:color 0.4s ease;`;
+    const distanceOpacity = disconnected ? 0 : 1;
+    const onSwitch = { hasToggle: true, toggleBg: "#00F2FF", toggleShadow: "0 0 8px rgba(0,242,255,0.7)", toggleJustify: "flex-end" };
+    const offSwitch = { hasToggle: true, toggleBg: "#38383A", toggleShadow: "none", toggleJustify: "flex-start" };
     const screens = [
-      { emoji: "⏻", color: "#00F2FF", glowStrong: "rgba(0,242,255,0.7)", glow: "rgba(0,242,255,0.18)", title: "One-Tap Lock", copy: "The big neon power button. Tap it — your Mac locks in under half a second.", label: "Main" },
-      { emoji: "📡", color: "#00F2FF", glowStrong: "rgba(0,242,255,0.7)", glow: "rgba(0,242,255,0.18)", title: "Proximity Auto-Lock", copy: "Set a radius from 1–20 m. Leave it and the Mac locks itself. Live distance readout.", label: "Auto-Lock Settings" },
-      { emoji: "💻", color: "#8CFF33", glowStrong: "rgba(140,255,51,0.7)", glow: "rgba(140,255,51,0.15)", title: "Multiple Macs", copy: "Pair several Macs, pick the active one, or hit \"Lock all\" at once.", label: "Choose Mac" },
-      { emoji: "🔗", color: "#8CFF33", glowStrong: "rgba(140,255,51,0.7)", glow: "rgba(140,255,51,0.15)", title: "Lock on Disconnect", copy: "Bluetooth link drops? The Mac locks within your 1–10 s window. Reconnects silently.", label: "Fail-Safe" }
+      { title: "Choose Mac", glow: "rgba(0,242,255,0.14)", label: "Pair multiple Macs",
+        rows: [
+          { label: "Ilya's MacBook Air", sub: "Offline", subColor: "#596673", color: "#4DA6FF", hasDot: true, dot: "#596673" },
+          { label: "All Macs", sub: "Lock every paired Mac at once", subColor: "#596673", color: "#994DFF", hasDot: true, dot: "#994DFF" }
+        ] },
+      { title: "Choose Mac", glow: "rgba(0,242,255,0.14)", label: "Nearby & saved Macs",
+        rows: [
+          { label: "Ilya's MacBook Pro", sub: "Available to lock", subColor: "#8CFF33", color: "#4DA6FF", hasDot: true, dot: "#8CFF33", hasCheck: true },
+          { label: "All Macs", sub: "Lock every paired Mac at once", subColor: "#596673", color: "#994DFF", hasDot: true, dot: "#994DFF" },
+          { label: "Searching for Macs…", sub: null, color: "#8b8b9c", hasDot: true, dot: "#596673" }
+        ] },
+      { title: "Security", glow: "rgba(0,242,255,0.14)", label: "Proximity auto-lock settings",
+        rows: [
+          { label: "Lock when I close the app", sub: null, color: "#f2f2f7", ...onSwitch },
+          { label: "Calibrate — stand 1 m away", sub: "Sets your distance reference", subColor: "#596673", color: "#00F2FF", hasDot: true, dot: "#00F2FF" }
+        ] },
+      { title: "Auto-Lock", glow: "rgba(140,255,51,0.14)", label: "Walk away, it locks",
+        rows: [
+          { label: "Auto-lock when I walk away", sub: null, color: "#f2f2f7", ...onSwitch },
+          { label: "Distance", sub: null, color: "#f2f2f7", hasSlider: true, sliderValue: "5 m", sliderPct: "28%" },
+          { label: "Lock delay after disconnect", sub: null, color: "#f2f2f7", hasSlider: true, sliderValue: "5 s", sliderPct: "45%" }
+        ] }
     ];
-    return { screens };
+    return { screens, btnColor, btnBoxStyle, pillStyle, disconnected, statusRowStyle, statusIconStyle, statusTextStyle, statusText, distanceOpacity };
   }
 }
 
