@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — NeonLock</title>
+  <meta name="description" content="NeonLock support: contact us, setup guide, troubleshooting and frequently asked questions.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #000;
+      color: #a3a3af;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 72px 32px 96px; }
+    a { color: #00F2FF; }
+    h1 {
+      color: #f2f2f7; font-size: 34px; margin: 0 0 8px; letter-spacing: -0.02em;
+      text-shadow: 0 0 12px rgba(0,242,255,0.35);
+    }
+    h2 { color: #f2f2f7; font-size: 21px; margin: 44px 0 12px; letter-spacing: -0.01em; }
+    h3 { color: #f2f2f7; font-size: 16px; margin: 26px 0 6px; }
+    .eyebrow { color: #00F2FF; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .lede { font-size: 17px; margin: 0 0 8px; }
+    p { margin: 0 0 14px; }
+    strong { color: #f2f2f7; }
+    ol, ul { padding-left: 20px; margin: 0 0 14px; }
+    li { margin: 7px 0; }
+    .card {
+      margin: 28px 0; padding: 26px 28px; border-radius: 16px;
+      background: #0C0C0E; border: 1px solid rgba(0,242,255,0.25);
+      box-shadow: 0 0 24px rgba(0,242,255,0.08);
+    }
+    .card h2 { margin-top: 0; }
+    .mail {
+      display: inline-block; margin-top: 6px; font-size: 20px; font-weight: 600;
+      color: #00F2FF; text-decoration: none;
+    }
+    .meta { color: #596673; font-size: 14px; }
+    .btn {
+      display: inline-block; margin-top: 8px; padding: 12px 22px; border-radius: 100px;
+      background: #0C0C0E; color: #00F2FF; font-weight: 600; font-size: 14px;
+      text-decoration: none; border: 2px solid #00F2FF;
+      box-shadow: 0 0 6px rgba(0,242,255,0.5), 0 0 22px rgba(0,242,255,0.25);
+    }
+    .faq { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; margin-top: 18px; }
+    footer { color: #596673; font-size: 13px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
+    .back { display: inline-block; margin-top: 36px; font-size: 14px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="eyebrow">NeonLock</div>
+    <h1>Support</h1>
+    <p class="lede">Questions, problems, or feedback — we're happy to help.</p>
+
+    <div class="card">
+      <h2>Contact us</h2>
+      <p style="margin-bottom:2px;">Email us and we'll get back to you, usually within 1–2 business days:</p>
+      <a class="mail" href="mailto:toch.in.go@gmail.com">toch.in.go@gmail.com</a>
+      <p class="meta" style="margin-top:14px; margin-bottom:0;">
+        To help us answer faster, please include your iPhone model and iOS version,
+        your Mac model and macOS version, and a short description of what happened.
+      </p>
+    </div>
+
+    <h2>Getting started</h2>
+    <p>NeonLock has two parts: the iPhone app, and a small free companion app for your
+    computer called <strong>NeonLockMac</strong>, which runs in the menu bar and performs the
+    lock. You need both.</p>
+    <ol>
+      <li><strong>Install the companion app.</strong> Download it on your computer, open the
+        disk image, and drag NeonLockMac to your Applications folder.
+        <br><a class="btn" href="https://github.com/Sparksss/neonlock-site/releases/latest/download/NeonLockMac.dmg">Download NeonLockMac</a>
+      </li>
+      <li><strong>Launch it.</strong> A ⚡ bolt icon appears in the menu bar. Click it to confirm
+        it says "Advertising".</li>
+      <li><strong>Add it to Login Items</strong> (System Settings → General → Login Items) so it
+        starts automatically.</li>
+      <li><strong>Open NeonLock on your iPhone</strong> and allow Bluetooth when prompted.</li>
+      <li><strong>Pair.</strong> Tap the laptop icon in the top right, find your computer under
+        "Nearby", and tap it. It moves to "Your Macs" with a green dot.</li>
+      <li><strong>Tap the big power button</strong> — the screen locks instantly.</li>
+    </ol>
+
+    <h2>Frequently asked questions</h2>
+
+    <div class="faq">
+      <h3>My computer doesn't appear under "Nearby"</h3>
+      <ul>
+        <li>Make sure NeonLockMac is running — look for the ⚡ bolt in the menu bar.</li>
+        <li>Check Bluetooth is on for <em>both</em> devices.</li>
+        <li>Keep the two devices within a few metres while pairing.</li>
+        <li>Open the picker screen again — scanning only runs while it is on screen.</li>
+      </ul>
+    </div>
+
+    <div class="faq">
+      <h3>The button is amber and says "Disconnected"</h3>
+      <p>Amber means no live connection. The app reconnects on its own when the computer is
+      awake and in range. If it persists, quit and reopen NeonLockMac on the computer, or
+      unpair and pair again from the iPhone (swipe left on the device in the list to unpair).</p>
+    </div>
+
+    <div class="faq">
+      <h3>The distance reading looks wrong</h3>
+      <p>Distance is estimated from Bluetooth signal strength, so it is approximate and affected
+      by walls, bodies and pockets. For better accuracy, stand exactly 1 metre away and tap
+      <strong>Calibrate</strong> in Settings → Distance Accuracy.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Auto-lock didn't trigger when I walked away</h3>
+      <ul>
+        <li>Check <strong>Auto-lock when I walk away</strong> is on in Settings.</li>
+        <li>The trigger needs two consecutive readings past your set distance, so give it a few
+          seconds.</li>
+        <li>Try a shorter distance — in a small room the signal may never drop far enough.</li>
+      </ul>
+    </div>
+
+    <div class="faq">
+      <h3>macOS says the companion app can't be opened</h3>
+      <p>The current download is signed and notarized by Apple, so it should open normally. If you
+      still see a warning, you may have an older copy — delete it, download again using the button
+      above, and open the fresh version.</p>
+    </div>
+
+    <div class="faq">
+      <h3>Does NeonLock collect my data?</h3>
+      <p>No. There is no account, no analytics and no server. Everything happens directly between
+      your two devices over Bluetooth. See the <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="faq">
+      <h3>What do I need to run it?</h3>
+      <ul>
+        <li>iPhone running iOS 16 or later</li>
+        <li>A computer running macOS 26 (Tahoe) or later with NeonLockMac installed</li>
+        <li>Bluetooth enabled on both</li>
+      </ul>
+    </div>
+
+    <h2>Still stuck?</h2>
+    <p>Write to <a href="mailto:toch.in.go@gmail.com">toch.in.go@gmail.com</a> and describe what
+    you tried — we read every message.</p>
+
+    <a class="back" href="./">← Back to NeonLock</a>
+
+    <footer>© 2026 NeonLock. All rights reserved. · <a href="privacy.html">Privacy Policy</a></footer>
+  </div>
+</body>
+</html>
