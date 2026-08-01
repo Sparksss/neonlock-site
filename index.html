@@ -30,43 +30,44 @@
     a:hover { color: #8CFF33; }
 
     /* ---------- Responsive layout ----------
-       The page is authored with inline styles, so these overrides use
-       !important and attribute selectors to target the exact containers. */
+       This page is rendered client-side, so inline styles arrive normalised as
+       "prop: value". Selectors below match on values only (space-tolerant) and
+       use !important, since inline styles otherwise win. */
     html, body { max-width: 100%; overflow-x: hidden; }
     img, svg, video { max-width: 100%; height: auto; }
 
-    /* Tablets / small laptops: collapse the two-column hero to one column */
+    /* Tablets and below: collapse the two-column hero */
     @media (max-width: 900px) {
       [style*="grid-template-columns"] {
         grid-template-columns: 1fr !important;
         gap: 36px !important;
       }
-      /* let horizontal rows reflow instead of overflowing */
-      [style*="display:flex"] { flex-wrap: wrap; }
+      /* grid/flex children default to min-width:auto, which lets the fixed-width
+         phone mockup stretch the whole track — allow them to shrink instead */
+      [style*="grid-template-columns"] > * { min-width: 0 !important; }
+      [style*="flex"] { flex-wrap: wrap; }
     }
 
-    /* Phones: tighten the gutters and stop the decorative glow driving width */
-    @media (max-width: 600px) {
-      [style*="max-width:1200px"] {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-      }
+    /* Phones */
+    @media (max-width: 700px) {
+      [style*="1200px"] { padding-left: 20px !important; padding-right: 20px !important; }
       footer { padding-left: 20px !important; padding-right: 20px !important; }
-      [style*="width:900px"][style*="height:520px"] {
-        width: 130vw !important;
-        height: 70vw !important;
+      /* the device mockup is a fixed 402x874 — scale it down to fit, and pull
+         back the empty space the transform leaves behind */
+      [style*="874px"] {
+        transform: scale(0.78);
+        transform-origin: top center;
+        margin-bottom: -192px !important;
       }
-      /* full-width tap targets read better on a phone */
-      a[style*="border-radius:14px"] { flex: 1 1 100%; justify-content: center; }
+      /* decorative glow must never drive layout width */
+      [style*="900px"][style*="520px"] { width: 130vw !important; height: 70vw !important; }
     }
 
-    /* Very small phones (SE / mini) */
+    /* Small phones (SE / mini) */
     @media (max-width: 380px) {
-      [style*="max-width:1200px"] {
-        padding-left: 14px !important;
-        padding-right: 14px !important;
-      }
+      [style*="1200px"] { padding-left: 14px !important; padding-right: 14px !important; }
       footer { padding-left: 14px !important; padding-right: 14px !important; }
+      [style*="874px"] { transform: scale(0.66); margin-bottom: -297px !important; }
     }
 
     @media (prefers-reduced-motion: reduce) {
