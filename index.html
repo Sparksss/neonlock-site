@@ -8,7 +8,7 @@
 <body>
 <x-dc>
 <helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>NeonLock — Lock your Mac from your pocket</title>
   <script type="text/babel" src="./ios-frame.jsx"></script>
   <style>
@@ -28,6 +28,47 @@
     ::selection { background: #00F2FF; color: #000; }
     a { color: #00F2FF; }
     a:hover { color: #8CFF33; }
+
+    /* ---------- Responsive layout ----------
+       The page is authored with inline styles, so these overrides use
+       !important and attribute selectors to target the exact containers. */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, svg, video { max-width: 100%; height: auto; }
+
+    /* Tablets / small laptops: collapse the two-column hero to one column */
+    @media (max-width: 900px) {
+      [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+      }
+      /* let horizontal rows reflow instead of overflowing */
+      [style*="display:flex"] { flex-wrap: wrap; }
+    }
+
+    /* Phones: tighten the gutters and stop the decorative glow driving width */
+    @media (max-width: 600px) {
+      [style*="max-width:1200px"] {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      footer { padding-left: 20px !important; padding-right: 20px !important; }
+      [style*="width:900px"][style*="height:520px"] {
+        width: 130vw !important;
+        height: 70vw !important;
+      }
+      /* full-width tap targets read better on a phone */
+      a[style*="border-radius:14px"] { flex: 1 1 100%; justify-content: center; }
+    }
+
+    /* Very small phones (SE / mini) */
+    @media (max-width: 380px) {
+      [style*="max-width:1200px"] {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+      }
+      footer { padding-left: 14px !important; padding-right: 14px !important; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; }
     }
