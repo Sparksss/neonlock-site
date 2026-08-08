@@ -121,7 +121,7 @@
       <div style="margin-top:16px; display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; background:#0C0C0E; border:1px solid rgba(0,242,255,0.22); box-shadow:0 0 18px rgba(0,242,255,0.06);">
         <span style="font-size:18px; line-height:1; flex-shrink:0;" aria-hidden="true">🍺</span>
         <code id="brewCmd" style="flex:1; min-width:0; overflow-x:auto; white-space:nowrap; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; color:#00F2FF;">brew install --cask sparksss/neonlock/neonlock</code>
-        <button type="button" onclick="copyBrewCommand(this)" aria-label="Copy the Homebrew install command" style="flex-shrink:0; cursor:pointer; font:inherit; font-size:12px; font-weight:600; color:#00F2FF; background:transparent; border:1px solid rgba(0,242,255,0.5); border-radius:8px; padding:6px 12px;">Copy</button>
+        <button type="button" id="brewCopyBtn" aria-label="Copy the Homebrew install command" style="flex-shrink:0; cursor:pointer; font:inherit; font-size:12px; font-weight:600; color:#00F2FF; background:transparent; border:1px solid rgba(0,242,255,0.5); border-radius:8px; padding:6px 12px;">Copy</button>
       </div>
       <p style="font-size:13px; color:#596673; margin:14px 0 0;">Two pieces, one product: the iPhone remote + a tiny menu-bar agent on your Mac.</p>
       <div style="display:flex; gap:28px; margin-top:32px; color:#596673; font-size:13px;">
@@ -335,6 +335,8 @@ class Component extends DCLogic {
 
 </script>
   <script>
+    // Bound by delegation below: this page's client-side templating strips
+    // inline onclick attributes, and delegation also survives re-renders.
     // Copy the Homebrew install command. Uses the async Clipboard API where
     // available and falls back to a hidden textarea for older/insecure contexts.
     function copyBrewCommand(btn) {
@@ -364,6 +366,13 @@ class Component extends DCLogic {
         fallback();
       }
     }
+
+    document.addEventListener('click', function (e) {
+      var target = e.target;
+      if (!target || typeof target.closest !== 'function') return;
+      var btn = target.closest('#brewCopyBtn');
+      if (btn) copyBrewCommand(btn);
+    });
   </script>
 </body>
 </html>
